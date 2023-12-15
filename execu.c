@@ -1,5 +1,12 @@
 #include "head.h"
 
+/**
+ * e_command - Executes a command.
+ * @command: An array of strings representing the command and its arguments.
+ * @argv: An array of strings representing the program arguments.
+ *
+ * Return: Returns the exit status of the executed command.
+ */
 int e_command(char **cmd, char **argv) {
     pid_t child;
     int status;
@@ -16,27 +23,5 @@ int e_command(char **cmd, char **argv) {
         waitpid(child, &status, 0);
         f_2d_array(&cmd);
     }
-    return (WEXITSTATUS(status));
-}
-
-/**
- * f_2d_array - Frees a two-dimensional array.
- * @arr: The array to be freed.
- */
-
-void f_2d_array(char ***arr) {
-    int i;
-    i = 0;
-
-    if (arr == NULL || *arr == NULL) {
-        return;
-    }
-
-    while ((*arr)[i] != NULL) {
-        free((*arr)[i]);
-        (*arr)[i++] = NULL;
-    }
-
-    free(*arr);
-    *arr = NULL;
+ 	return (WEXITSTATUS(status));
 }
