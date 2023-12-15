@@ -6,23 +6,24 @@
  *
  * Return: Returns the duplicated string.
  */
-char *s_duplicate(const char *str) {
-    char *ptr;
-    int i, len = 0;
+char *s_duplicate(const char *str)
+{
+	char *ptr;
+	int i, len = 0;
 
-    if (str == NULL)
-        return (NULL);
+	if (str == NULL)
+	return (NULL);
 
-    len = s_length(str);
-    ptr = malloc(sizeof(char) * (len + 1));
-    if (ptr == NULL)
-        return(NULL);
+	len = s_length(str);
+	ptr = malloc(sizeof(char) * (len + 1));
+	if (ptr == NULL)
+	return(NULL);
 
-    for (i = 0; i < len; i++)
-        ptr[i] = str[i];
-    ptr[i] = '\0';
+	for (i = 0; i < len; i++)
+	ptr[i] = str[i];
+	ptr[i] = '\0';
 
-    return (ptr);
+	return (ptr);
 }
 
 /**
@@ -33,12 +34,14 @@ char *s_duplicate(const char *str) {
  * Return: Returns an integer less than, equal to, or greater than 0
  * if s1 is found, respectively, to be less than, to match, or be greater than s2.
 */
-int s_compare(const char *s1, const char *s2) {
-    while (*s1 && (*s1 == *s2)) {
-        s1++;
-        s2++;
-    }
-    return *(unsigned char *)s1 - *(unsigned char *)s2;
+int s_compare(const char *s1, const char *s2)
+{
+	while (*s1 && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	return *(unsigned char *)s1 - *(unsigned char *)s2;
 }
 
 /**
@@ -47,12 +50,14 @@ int s_compare(const char *s1, const char *s2) {
  *
  * Return: Returns the length of the string.
  */
-int s_length(const char *s) {
-    int len = 0;
-    while (s[len]){
-        len++;
-}
-    return (len);
+int s_length(const char *s)
+{
+	int len = 0;
+	while (s[len])
+	{
+		len++;
+	}
+	return (len);
 }
 
 /**
@@ -62,17 +67,20 @@ int s_length(const char *s) {
  *
  * Return: Returns the concatenated string.
  */
-char *s_concatenate(char *dest, const char *src) {
-    char *p = dest;
+char *s_concatenate(char *dest, const char *src)
+{
+	char *p = dest;
 
-    while (*p) {
-        p++;
-    }
+	while (*p)
+	{
+		p++;
+	}
 
-    while ((*p++ = *src++)) {
-    }
+	while ((*p++ = *src++))
+	{
+	}
 
-    return (dest);
+	return (dest);
 }
 
 /**
@@ -82,12 +90,14 @@ char *s_concatenate(char *dest, const char *src) {
  *
  * Return: Returns the copied string.
  */
-char *s_copy(char *dest, const char *src) {
-    int i = 0;
+char *s_copy(char *dest, const char *src)
+{
+	int i = 0;
 
-    while ((dest[i] = src[i])) {
-        i++;
-    }
+	while ((dest[i] = src[i]))
+	{
+		i++;
+	}
 
-    return (dest);
+	return (dest);
 }
