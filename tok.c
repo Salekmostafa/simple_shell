@@ -17,7 +17,8 @@ char **t_input(char *input)
 	tmp = s_duplicate(input);
 
 	token = strtok(tmp, TOKEN_DELIMITER);
-	if (token == NULL) {
+	if (token == NULL)
+	{
 	free(tmp), tmp = NULL;
 	return (NULL);
 	}
@@ -44,7 +45,7 @@ char **t_input(char *input)
 		token = strtok(NULL, TOKEN_DELIMITER);
 		i++;
 	}
-	free(input), input = NULL;;
+	free(input), input = NULL;
 	cmd[i] = NULL;
 	return (cmd);
 }

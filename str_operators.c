@@ -17,7 +17,7 @@ char *s_duplicate(const char *str)
 	len = s_length(str);
 	ptr = malloc(sizeof(char) * (len + 1));
 	if (ptr == NULL)
-	return(NULL);
+	return (NULL);
 
 	for (i = 0; i < len; i++)
 	ptr[i] = str[i];
@@ -32,7 +32,7 @@ char *s_duplicate(const char *str)
  * @s2: The second string.
  *
  * Return: Returns an integer less than, equal to, or greater than 0
- * if s1 is found, respectively, to be less than, to match, or be greater than s2.
+ * if s1 is found, respectively, to be <, to match, or > s2.
 */
 int s_compare(const char *s1, const char *s2)
 {
@@ -41,7 +41,7 @@ int s_compare(const char *s1, const char *s2)
 		s1++;
 		s2++;
 	}
-	return *(unsigned char *)s1 - *(unsigned char *)s2;
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
 /**
@@ -53,6 +53,7 @@ int s_compare(const char *s1, const char *s2)
 int s_length(const char *s)
 {
 	int len = 0;
+
 	while (s[len])
 	{
 		len++;

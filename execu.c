@@ -39,6 +39,7 @@ int e_command(char **cmd, char **argv)
 void f_2d_array(char ***arr)
 {
 	int i;
+
 	i = 0;
 
 	if (arr == NULL || *arr == NULL)

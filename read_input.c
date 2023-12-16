@@ -13,7 +13,7 @@ char *r_input(void)
 
 	write(STDOUT_FILENO, "$ ", 2);
 
-	if ((n = getline(&input, &len, stdin)) == -1)
+	if ((n == getline(&input, &len, stdin)) == -1)
 	{
 	perror("getline");
 	return (NULL);
