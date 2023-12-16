@@ -5,15 +5,15 @@
  *
  * Return: Returns the input line as a string.
  */
-char *r_input(void)
-{
+char *r_input(void){
+
 	char *input = NULL;
 	size_t len = 0;
 	ssize_t n;
 
 	write(STDOUT_FILENO, "$ ", 2);
 
-	if ((n == getline(&input, &len, stdin)) == -1)
+	if ((n = getline(&input, &len, stdin)) == -1)
 	{
 	perror("getline");
 	return (NULL);
