@@ -13,6 +13,7 @@
 
 #define TOKEN_DELIMITER " \t\n"
 
+extern char **environ;
 int main(int argc, char **argv);
 extern char **s_env;
 void f_2d_array(char ***arr);
@@ -24,5 +25,6 @@ int s_length(const char *s);
 char *s_concatenate(char *dest, const char *src);
 char *s_copy(char *dest, const char *src);
 int e_command(char **command, char **argv);
+char *get_environment_variable(char *variable);
 
 #endif

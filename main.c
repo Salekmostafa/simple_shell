@@ -9,27 +9,41 @@
  *
  * Description: If the argument count is incorrect - exit code 97.
  */
+
 int main(int argc, char **argv)
 {
-
 	char *input = NULL, **cmd = NULL;
 	int status = 0;
+	int i = 0;
 	(void)argc;
 
 	while (1)
 	{
 		input = r_input();
 		if (input == NULL)
-	{
-		if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, "\n", 1);
-		return (status);
-	}
+		{
+			if (isatty(STDIN_FILENO))
+			{
+				write(STDOUT_FILENO, "\n", 1);
+			}
+			return (status);
+		}	
+		cmd = t_input(input);
+		if (!cmd)
+		{
+			continue;
+		}
+		f_2d_array(&cmd);
 
-	cmd = t_input(input);
-	if (!cmd)
-		continue;
-	f_2d_array(&cmd);
+	/*int i = 0;*/
+	while (cmd[i] != NULL)
+	{
+		free(cmd[i]);
+		i++;
+	}
+	free(cmd);
+
 	status = e_command(cmd, argv);
+	free(input);
 	}
 }
